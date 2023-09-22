@@ -39,7 +39,7 @@ router.get('/ab', function (req, res) {
   add = `INSERT INTO accounts (username, password, email, created_on)
     VALUES('James', '12345', 'james@example.com', '2016-06-22 19:10:25-07');`
   // client.query(text);
-  client.query(add);
+  // client.query(add);
   client.query('SELECT * FROM accounts', (err, res) => {
     console.log(res.rows)
     client.end()
