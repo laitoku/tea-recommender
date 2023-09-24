@@ -17,12 +17,12 @@ var port = process.env.PORT || 8080;        // set our port
 var router = express.Router();              // get an instance of the express Router
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function (req, res) {
-  res.json({ message: 'hooray! welcome to our api!' });
-});
-router.get('/c', function (req, res) {
-  res.json({ message: 'Get request worked. /c route' });
-});
+// router.get('/', function (req, res) {
+//   res.json({ message: 'hooray! welcome to our api!' });
+// });
+// router.get('/c', function (req, res) {
+//   res.json({ message: 'Get request worked. /c route' });
+// });
 router.get('/ab', function (req, res) {
   client.query('SELECT NOW()', (err, res) => {
     console.log(res.rows)
@@ -51,11 +51,12 @@ router.get('/ab', function (req, res) {
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', router);
+// app.use('/api', router);
 
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', require('./routes/index'));
+app.use('/api', require('./routes/api'))
 
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, 'views/index.html'));
