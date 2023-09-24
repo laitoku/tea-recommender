@@ -3,7 +3,7 @@ var express = require('express');        // call express
 var app = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var path = require('path');
-var client = require('./db.js')
+// var client = require('./db.js')
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -53,8 +53,10 @@ router.get('/ab', function (req, res) {
 // all of our routes will be prefixed with /api
 app.use('/api', router);
 
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'inde.html'));
 });
 
 // START THE SERVER
