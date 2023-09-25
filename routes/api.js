@@ -1,26 +1,25 @@
-const express = require('express'); 
-const router = express.Router();    
-const path = require('path');
-var pool = require('../config/db.js');
-const control = require('../controllers/index.js');
+const express = require('express');
 
-router.get('/', function (req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
-  });
-  
-router.get('/c', function (req, res) {
-    res.json({ message: 'Get request worked. /c route' });
-  });
+const router = express.Router();
+const control = require('../controllers/index');
+
+router.get('/', (req, res) => {
+  res.json({ message: 'hooray! welcome to our api!' });
+});
+
+router.get('/c', (req, res) => {
+  res.json({ message: 'Get request worked. /c route' });
+});
 
 router.route('/select')
-  .get(control.getAllTea); 
+  .get(control.getAllTea);
 // function (req, res) {
 //   // pool.query('SELECT NOW()', (err, res) => {
 //   //   console.log(res.rows)
 //   //   // pool.end()
 //   // });
 
-//   add = `INSERT INTO teas (teaname, teatype, temperature, mood, caffeinated) 
+//   add = `INSERT INTO teas (teaname, teatype, temperature, mood, caffeinated)
 //   VALUES
 //       ('Jasmine', 'Green', 'Hot', 'Relax', TRUE),
 //       ('English Breakfast', 'Black', 'Hot', 'Relax', TRUE),
@@ -41,6 +40,5 @@ router.route('/select')
 //   });
 //   // res.json({ message: 'This is the /select route.' });
 // });
-
 
 module.exports = router;
