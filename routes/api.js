@@ -1,7 +1,8 @@
 const express = require('express'); 
 const router = express.Router();    
 const path = require('path');
-var pool = require('../config/db.js')
+var pool = require('../config/db.js');
+var model = require('../models/index.js');
 
 router.get('/', function (req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
@@ -12,10 +13,10 @@ router.get('/c', function (req, res) {
   });
 
 router.get('/select', function (req, res) {
-  pool.query('SELECT NOW()', (err, res) => {
-    console.log(res.rows)
-    // pool.end()
-  });
+  // pool.query('SELECT NOW()', (err, res) => {
+  //   console.log(res.rows)
+  //   // pool.end()
+  // });
 
   add = `INSERT INTO teas (teaname, teatype, temperature, mood, caffeinated) 
   VALUES
@@ -24,12 +25,19 @@ router.get('/select', function (req, res) {
       ('Alishan', 'Oolong', 'Hot', 'Relax', TRUE);`
 
   // pool.query(add);
-  pool.query('SELECT * FROM teas', (err, res) => {
-    console.log(res.rows)
-    // pool.end()
+  // var result = pool.query('SELECT * FROM teas', (err, res) => {
+  //   // console.log(res.rows)
+  //   var result = JSON.stringify(res.rows);
+  //   // pool.end()
+  // });
+  model.selectAllTea().then((result) => {
+    // console.log(result);
+    var tea = JSON.stringify(result, null, 4)
+    // var tea = tea.replace(/\n/g, '\n')
+    // console.log(tea)
+    res.end(tea)
   });
-  
-  res.json({ message: 'This is the /select route.' });
+  // res.json({ message: 'This is the /select route.' });
 });
 
 
