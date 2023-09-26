@@ -7,7 +7,7 @@ async function selectAllTea() {
   // }
   // console.log(statement)
 
-  const result = await pool.query('SELECT * FROM teas');
+  const result = await pool.query('SELECT * FROM tea');
   await pool.query('SELECT NOW()', (err, res) => {
     console.log(res.rows);
     // pool.end()
