@@ -28,11 +28,61 @@ CREATE TABLE IF NOT EXISTS health (
         REFERENCES tea(tea_id)
 );
 
-INSERT INTO tea (tea_name, tea_type, temperature, mood, caffeinated)
+INSERT INTO tea (tea_name, tea_type, caffeinated)
     VALUES
-        ('Jasmine', 'Green', 'Hot', 'Relax', TRUE),
-        ('English Breakfast', 'Black', 'Hot', 'Relax', TRUE),
-        ('Alishan', 'Oolong', 'Hot', 'Relax', TRUE);
+        ('Jasmine', 'Green', TRUE),
+        ('English Breakfast', 'Black', TRUE),
+        ('Alishan', 'Oolong', TRUE),
+        ('Chamomile', 'Herbal', FALSE),
+        ('Pepermint', 'Herbal', FALSE),
+        ('Rosehip', 'Herbal', FALSE),
+        ('Rooibos', 'Herbal', FALSE),
+        ('Ginger', 'Herbal', FALSE),
+        ('Cinnamon', 'Herbal', FALSE),
+        ('Lemongrass', 'Herbal', FALSE),
+        ('Tulsi', 'Herbal', FALSE),
+        ('Rosemary', 'Herbal', FALSE),
+        ('Olive leaf', 'Herbal', FALSE),
+        ('Barley', 'Herbal', FALSE),
+        ('Licorice', 'Herbal', FALSE),
+        ('Eucalyptus', 'Herbal', FALSE),
+        ('Iceland moss', 'Herbal', FALSE),
+        ('Gingko', 'Herbal', FALSE),
+        ('Ashwagandha', 'Herbal', FALSE),
+        ('Sage', 'Herbal', FALSE),
+        ('Raspberry leaf', 'Herbal', FALSE),
+        ('Valerian root', 'Herbal', FALSE),
+        ('Anise seed', 'Herbal', FALSE),
+        ('ELder berry flower', 'Herbal', FALSE),
+        ('Liden flower', 'Herbal', FALSE),
+        ('Tumeric', 'Herbal', FALSE),
+        ('Moringa', 'Herbal', FALSE),
+        ('Lavender', 'Herbal', FALSE),
+        ('Pine needle', 'Herbal', FALSE),
+        ('Echinacea', 'Herbal', FALSE),
+        ('Honeybush', 'Herbal',FALSE),
+        ('Hibicus','Herbal',FALSE),
+        ('Osmanthus','Herbal',FALSE),
+        ('Chrysanthenum','Herbal',FALSE),
+        ('Rose','Herbal',FALSE),
+        ('Jasmine','Herbal',FALSE),
+        ('Yarrow','Herbal',FALSE),
+        ('Stinging nettle','Herbal',FALSE),
+        ('Dandelion','Herbal',FALSE),
+        ('Cranberry','Herbal',FALSE),
+        ('St John Word','Herbal',FALSE),
+        ('Yerba Mate','Herbal',FALSE),
+        ('Guava Mate','Herbal',FALSE),
+        ('Gotu kola','Herbal',FALSE),
+        ('Marshmallow root','Herbal',FALSE),
+        ('Thyme','Herbal',FALSE),
+        ('Calendula','Herbal',FALSE),
+        ('','Herbal',FALSE),
+        ('','Herbal',FALSE),
+        ('','Herbal',FALSE),
+        ('','Herbal',FALSE),
+        ('','Herbal',FALSE),
+        ('','Herbal',FALSE),;
 
 INSERT INTO flavor (tea_idf, flavor)
     VALUES
@@ -42,4 +92,5 @@ INSERT INTO flavor (tea_idf, flavor)
 INSERT INTO health (tea_idh, benefit)
     VALUES
         (1, 'Antioxidants'),
-        (1, 'Weight Loss');
+        (1, 'Weight Loss'),
+        (1, 'Muscle Relax');
