@@ -11,7 +11,7 @@ This is a small example of how to start a postgres docker container and send com
 docker-compose up -d
 
 # Stop and remove postgres container
-docker-compose down
+docker-compose down -v
 
 # Start a interactive container using psql to connect to mydb
 docker run -it --rm --network tea-recommender_default postgres:15.4 psql -h mydb -U postgres
