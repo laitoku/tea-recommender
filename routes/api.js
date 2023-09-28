@@ -13,6 +13,8 @@ router.get('/c', (req, res) => {
 
 router.route('/select')
   .get(control.getAllTea);
+router.route('/sel')
+  .get(control.getTea);
 // function (req, res) {
 //   // pool.query('SELECT NOW()', (err, res) => {
 //   //   console.log(res.rows)

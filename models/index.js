@@ -1,19 +1,26 @@
 const pool = require('../config/db');
 
-async function selectAllTea() {
-  // var statement = {
-  //     text: 'SELECT $1 FROM teas',
-  //     values: [param]
-  // }
-  // console.log(statement)
-
-  const result = await pool.query('SELECT * FROM tea');
+async function selectTea(values = '') {
   await pool.query('SELECT NOW()', (err, res) => {
     console.log(res.rows);
-    // pool.end()
   });
-  // console.log(res.rows)
-  return result.rows;
+
+  if (values == '')
+  {
+    var result = await pool.query('SELECT * FROM tea');
+    return result.rows;
+  }
+  else
+  {
+    const text = `SELECT * 
+                  FROM tea 
+                  INNER JOIN flavor ON tea_id = tea_idf 
+                  WHERE tea_type = $1 AND caffeinated = $2 AND flavor = $3`
+    
+    var result = await pool.query(text, values);
+    return result.rows;
+  }
+  
 }
 
-module.exports = { selectAllTea };
+module.exports = { selectTea };
