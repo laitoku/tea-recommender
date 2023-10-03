@@ -5,8 +5,8 @@ CREATE TABLE IF NOT EXISTS tea (
     tea_id serial PRIMARY KEY,
     tea_name VARCHAR (50) NOT NULL,
     tea_type VARCHAR (50) NOT NULL,
-    temperature CHAR (4) NOT NULL,
-    mood VARCHAR (50) NOT NULL,
+    -- temperature CHAR (4) NOT NULL,
+    -- mood VARCHAR (50) NOT NULL,
     caffeinated BOOLEAN NOT NULL
 );
 
@@ -149,7 +149,7 @@ INSERT INTO tea (tea_name, tea_type, caffeinated)
         ('Pouchong', 'Oolong', TRUE),
         ('Ruan Zhi', 'Oolong', TRUE),
         ('Jin Xuan', 'Oolong', TRUE),
-        ('Li Shan', 'Oolong', TRUE);
+        ('Li Shan', 'Oolong', TRUE),
         
 
 INSERT INTO flavor (tea_idf, flavor)

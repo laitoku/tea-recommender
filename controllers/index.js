@@ -1,13 +1,18 @@
 const model = require('../models/index');
 
 const getAllTea = (req, res) => {
-  model.selectAllTea().then((result) => {
-    // console.log(result);
+  model.selectTea().then((result) => {
     const tea = JSON.stringify(result, null, 4);
-    // var tea = tea.replace(/\n/g, '\n')
-    // console.log(tea)
+    // res.end(tea);
+    res.render('index3', { rows: result });
+  });
+};
+
+const getTea = (req, res) => {
+  model.selectTea(['Green', 'yes', 'Sweet']).then((result) => {
+    const tea = JSON.stringify(result, null, 4);
     res.end(tea);
   });
 };
 
-module.exports = { getAllTea };
+module.exports = { getAllTea, getTea };

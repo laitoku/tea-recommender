@@ -1,16 +1,9 @@
-const { Pool } = require('pg');
+const sqlite3 = require('sqlite3');
+const { open } = require('sqlite');
 
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'tea_db',
-  password: 'pass',
-  port: 5432,
+const db = open({
+  filename: './config/tea_db.db',
+  driver: sqlite3.Database
 });
 
-pool.connect((err) => {
-  if (err) throw err;
-  console.log('Connected!');
-});
-
-module.exports = pool;
+module.exports = db;
