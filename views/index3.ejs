@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('./partials/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1>This is great</h1>
+    <p>Welcome to templating using EJS</p>
+
+    <ul>
+        <% rows.forEach(function(row) { %>
+          <li>
+            <strong><%= row.tea_id %> <%= row.tea_name %> <%= row.tea_type %> Tea</strong>
+             - Caffeine: <%= row.caffeine %>
+          </li>
+        <% }); %>
+      </ul>
+  </div>
+</main>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>

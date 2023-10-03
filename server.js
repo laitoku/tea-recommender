@@ -9,6 +9,8 @@ const path = require('path');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.set('view engine', 'ejs');
+
 const port = process.env.PORT || 8080; // set our port
 
 // ROUTES FOR OUR API
