@@ -12,7 +12,8 @@ router.get('/c', (req, res) => {
 });
 
 router.route('/select')
-  .get(control.getAllTea);
+  .get(control.getAllTea)
+  .post(control.getTea);
 router.route('/sel')
   .get(control.getTea);
 // function (req, res) {

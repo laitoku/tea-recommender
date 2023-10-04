@@ -14,6 +14,46 @@
         <form action="/api/c" method="GET">
           <button type="Submit">Submit</button>
         </form>>
+
+        <h1>Survey Questions</h1>
+        
+        <form action="/api/select" method="post">
+            <fieldset>
+                <legend>Question 1: What sort of flavors do you like?</legend>
+                <input type="checkbox" id="floral" name="flavors[]" value="Floral">
+                <label for="java">Floral</label><br>
+
+                <input type="checkbox" id="sweet" name="flavors[]" value="Sweet">
+                <label for="python">Sweet</label><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Question 2: What are some health benefits you might like to have?</legend>
+                <input type="checkbox" id="antiox" name="benefits[]" value="Antioxidants">
+                <label for="apple">Antioxidants</label><br>
+
+                <input type="checkbox" id="weight_loss" name="benefits[]" value="Weight Loss">
+                <label for="banana">Weight Loss</label><br>
+
+                <input type="checkbox" id="muscle_relax" name="benefits[]" value="Muscle Relax">
+                <label for="orange">Muscle Relax</label><br>
+            </fieldset>
+
+            <fieldset>
+              <legend>Question 3: Do you want caffeine in your tea?</legend>
+              <label>
+                  <input type="radio" name="caffeine_preference" value=1> Yes
+              </label><br>
+          
+              <label>
+                  <input type="radio" name="caffeine_preference" value=0> No
+              </label><br>
+          </fieldset>
+          
+
+            <input type="submit" value="Submit">
+        </form>
+
     </main>
 	<script src="index.js"></script>
   </body>
