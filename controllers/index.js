@@ -11,35 +11,8 @@ const getAllTea = (req, res) => {
 
 const getTea = (req, res) => {
   if (req) {
-    const values = req.body;
-    let flavors = '';
-    let benefits = '';
-
-    if (values.flavors.length > 1) {
-      for (let i = 0; i < values.flavors.length; i++) {
-        if (i === (values.flavors.length - 1)) {
-          flavors += values.flavors[i];
-        } else {
-          flavors = `${flavors + values.flavors[i]} | `;
-        }
-      }
-      console.log(flavors);
-    }
-
-    if (values.benefits.length > 1) {
-      for (let i = 0; i < values.benefits.length; i++) {
-        if (i === (values.benefits.length - 1)) {
-          benefits += values.benefits[i];
-        } else {
-          benefits = `${benefits + values.benefits[i]} | `;
-        }
-      }
-      console.log(benefits);
-    }
-
-    const caffeine = parseInt(values.caffeine_preference, 10);
-
-    const params = [values.flavors, values.benefits, caffeine];
+    const caffeine = parseInt(req.body.caffeine_preference, 10);
+    const params = [req.body.flavors, req.body.benefits, caffeine];
 
     model.selectTea(params).then((result) => {
       const combinedResult = {};
