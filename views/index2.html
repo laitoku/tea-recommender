@@ -10,37 +10,29 @@
   </head>
   <body>
     <main>
-        <h1>Test Page</h1>  
-        <form action="/api/c" method="GET">
-          <button type="Submit">Submit</button>
-        </form>>
-
         <h1>Survey Questions</h1>
         
         <form action="/api/select" method="post">
             <fieldset>
                 <legend>Question 1: What sort of flavors do you like?</legend>
-                <input type="checkbox" id="floral" name="flavors[]" value="Floral">
-                <label for="java">Floral</label><br>
-
                 <input type="checkbox" id="sweet" name="flavors[]" value="Sweet">
-                <label for="python">Sweet</label><br>
+                <label for="sweet">Sweet</label><br>
+
+                <input type="checkbox" id="sour" name="flavors[]" value="Sour">
+                <label for="sour">Sour</label><br>
+
+                <input type="checkbox" id="salty" name="flavors[]" value="Salty">
+                <label for="salty">Salty</label><br>
+
+                <input type="checkbox" id="bitter" name="flavors[]" value="Bitter">
+                <label for="bitter">Bitter</label><br>
+
+                <input type="checkbox" id="umami" name="flavors[]" value="Umami">
+                <label for="umami">Umami</label><br>
             </fieldset>
 
             <fieldset>
-                <legend>Question 2: What are some health benefits you might like to have?</legend>
-                <input type="checkbox" id="antiox" name="benefits[]" value="Antioxidants">
-                <label for="apple">Antioxidants</label><br>
-
-                <input type="checkbox" id="weight_loss" name="benefits[]" value="Weight Loss">
-                <label for="banana">Weight Loss</label><br>
-
-                <input type="checkbox" id="muscle_relax" name="benefits[]" value="Muscle Relax">
-                <label for="orange">Muscle Relax</label><br>
-            </fieldset>
-
-            <fieldset>
-              <legend>Question 3: Do you want caffeine in your tea?</legend>
+              <legend>Question 2: Would you like caffeine in your tea?</legend>
               <label>
                   <input type="radio" name="caffeine_preference" value=1> Yes
               </label><br>
@@ -48,7 +40,71 @@
               <label>
                   <input type="radio" name="caffeine_preference" value=0> No
               </label><br>
-          </fieldset>
+            </fieldset>
+
+            <fieldset>
+              <legend>Question 3: How would you like the tea to make you feel?</legend>
+              <input type="checkbox" id="sleepy" name="feelings[]" value="Sleepy">
+              <label for="sleepy">Sleepy</label><br>
+
+              <input type="checkbox" id="other" name="benefits[]" value="OTHER">
+              <label for="other">Other</label><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Question 4: What are some health benefits you might like to have?</legend>
+                <input type="checkbox" id="antiox" name="benefits[]" value="Antioxidants">
+                <label for="antiox">Antioxidants</label><br>
+
+                <input type="checkbox" id="weight_loss" name="benefits[]" value="Weight Loss">
+                <label for="weight_loss">Weight Loss</label><br>
+
+                <input type="checkbox" id="muscle_relax" name="benefits[]" value="Muscle Relax">
+                <label for="muscle_relax">Muscle Relax</label><br>
+            </fieldset>
+
+            <fieldset>
+              <legend>Question 5: Would you like milk in your tea?</legend>
+              <label>
+                  <input type="radio" name="milk_preference" value=1 onchange="displayQuestion(this.value)"> Yes
+              </label><br>
+          
+              <label>
+                  <input type="radio" name="milk_preference" value=0 onchange="displayQuestion(this.value)"> No
+              </label><br>
+
+              <label>
+                <input type="radio" name="milk_preference" value=2 onchange="displayQuestion(this.value)"> Either
+              </label><br>
+            </fieldset>
+
+            <div id="toppingsQuestion" style="display:none;"><br/>
+              <fieldset>
+                <legend>Question 6: Would you like toppings in your tea?</legend>
+                <label>
+                    <input type="radio" name="toppings_preference" value=1 onchange="displayTextureQuestion(this.value)"> Yes
+                </label><br>
+            
+                <label>
+                    <input type="radio" name="toppings_preference" value=0 onchange="displayTextureQuestion(this.value)"> No
+                </label><br>
+  
+                <label>
+                  <input type="radio" name="toppings_preference" value=2 onchange="displayTextureQuestion(this.value)"> Either
+                </label><br>
+              </fieldset>
+            </div>
+          
+            <div id="toppingTexture" style="display:none;"><br/>
+              <fieldset>
+                <legend>Question 7: What sort of topping textures do you like?</legend>
+                <input type="checkbox" id="chewy" name="textures[]" value="Chewy">
+                <label for="chewy">Chewy</label><br>
+
+                <input type="checkbox" id="other" name="textures[]" value="OTHER">
+                <label for="other">Other</label><br>
+              </fieldset>
+            </div>
           
 
             <input type="submit" value="Submit">
