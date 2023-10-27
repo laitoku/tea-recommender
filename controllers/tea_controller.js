@@ -20,9 +20,9 @@ const getTea = (req, res) => {
     else {
       var topping = 0
     }
-    
+
     const params = [bd.flavors, caffeine, bd.feelings, bd.benefits, milk];
-    
+
 
     model.selectTeaTest(params).then((result) => {
       const combinedResult = {};
@@ -60,14 +60,22 @@ const getTea = (req, res) => {
         let paramT = [bd.flavors, bd.textures]
         model.selectTopping(paramT).then((tops) => {
           tops.forEach((toppingRow) => {
-            combinedResult.push(toppingRow)
+            combinedResult[toppingRow.topping_name] = {
+              flavor: toppingRow.flavor,
+              texture: toppingRow.texture,
+            }
           })
+
+          res.end(JSON.stringify(combinedResult, null, 4));
         })
+      }
+      else {
+        res.end(JSON.stringify(combinedResult, null, 4));
       }
 
       // Convert the combined result object into an array of values
       // const resultArray = Object.values(combinedResult);
-      res.end(JSON.stringify(combinedResult, null, 4));
+      // res.end(JSON.stringify(combinedResult, null, 4));
     });
   }
   // model.selectTea(['Green', 'yes', 'Sweet']).then((result) => {
