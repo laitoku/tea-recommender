@@ -39,7 +39,7 @@ const getTea = (req, res) => {
             tea_type: row.tea_type,
             caffeine: row.caffeine,
             flavors: [],
-            feelings: [],
+            feeling: [],
             benefits: [],
           };
         }
@@ -48,8 +48,8 @@ const getTea = (req, res) => {
         if (!combinedResult[teaId].flavors.includes(row.flavor)) {
           combinedResult[teaId].flavors.push(row.flavor);
         }
-        if (!combinedResult[teaId].flavors.includes(row.feeling)) {
-          combinedResult[teaId].flavors.push(row.feeling);
+        if (!combinedResult[teaId].feeling.includes(row.feeling)) {
+          combinedResult[teaId].feeling.push(row.feeling);
         }
         if (!combinedResult[teaId].benefits.includes(row.benefit)) {
           combinedResult[teaId].benefits.push(row.benefit);
@@ -66,11 +66,13 @@ const getTea = (req, res) => {
             }
           })
 
-          res.end(JSON.stringify(combinedResult, null, 4));
+          res.render('index4', { rows: result, toppings: tops });
+          // res.end(JSON.stringify(combinedResult, null, 4));
         })
       }
       else {
-        res.end(JSON.stringify(combinedResult, null, 4));
+        res.render('index3', { rows: result });
+        // res.end(JSON.stringify(combinedResult, null, 4));
       }
 
       // Convert the combined result object into an array of values

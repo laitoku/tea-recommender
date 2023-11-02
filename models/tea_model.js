@@ -42,7 +42,7 @@ async function selectTeaTest(values = '') {
   const query = `SELECT * FROM tea 
                   INNER JOIN flavor ON tea_id = tea_idf 
                   INNER JOIN health_benefit ON tea_id = tea_idh 
-                  WHERE flavor IN (${flavor}) OR caffeine = ? OR feeling IN (${feeling}) OR benefit IN (${benefit}) OR milk = ?`;
+                  WHERE flavor IN (${flavor}) AND caffeine = ? AND feeling IN (${feeling}) AND benefit IN (${benefit}) AND milk = ?`;
   const rows = await db.all(query, flat);
 
   return rows;

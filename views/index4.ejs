@@ -17,6 +17,13 @@
           </div>
         <% }); %>
       </ul>
+      <ul>
+        <% toppings.forEach(function(row) { %>
+          <div class="tea-block">
+            <strong><%= row.topping_name %> </strong>
+          </div>
+        <% }); %>
+      </ul>
   </div>
 </main>
 

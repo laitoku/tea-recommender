@@ -75,3 +75,9 @@ button:focus
     outline: none;
     background-color: greenyellow;
 }
+.tea-block {
+    border: 1px solid #ccc; /* Add a border to separate blocks */
+    padding: 10px; /* Add padding for spacing */
+    margin-bottom: 10px; /* Add margin to space blocks apart */
+    background-color: #f9f9f9; /* Set a background color for each block */
+}

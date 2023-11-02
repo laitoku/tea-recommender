@@ -131,3 +131,4 @@ dist
 
 # other
 .DS_Store
+tea_db_test.db

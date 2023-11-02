@@ -25,7 +25,9 @@ const port = process.env.PORT || 8080; // set our port
 // all of our routes will be prefixed with /api
 // app.use('/api', router);
 
-app.use(express.static(path.join(__dirname, '/public')));
+// app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('public'));
+
 
 app.use('/', require('./routes/index'));
 app.use('/api', require('./routes/api'));
