@@ -33,16 +33,16 @@ async function selectTeaTest(values = '') {
     return rows;
   }
 
-  const flavor = Array(values[0].length).fill('?').join(' OR ');
-  const feeling = Array(values[2].length).fill('?').join(' OR ');
-  const benefit = Array(values[3].length).fill('?').join(' OR ');
+  const flavor = Array(values[0].length).fill('?').join(',');
+  const feeling = Array(values[2].length).fill('?').join(',');
+  const benefit = Array(values[3].length).fill('?').join(',');
 
   const flat = values.flat();
 
-  const query = `SELECT * FROM tea 
+  const query = `SELECT DISTINCT tea_name, tea_type, description FROM tea 
                   INNER JOIN flavor ON tea_id = tea_idf 
                   INNER JOIN health_benefit ON tea_id = tea_idh 
-                  WHERE flavor IN (${flavor}) AND caffeine = ? AND feeling IN (${feeling}) AND benefit IN (${benefit}) AND milk = ?`;
+                  WHERE (flavor IN (${flavor})) AND caffeine = ? AND (feeling IN (${feeling})) AND (benefit IN (${benefit})) AND milk = ?`;
   const rows = await db.all(query, flat);
 
   return rows;
