@@ -54,13 +54,13 @@ async function selectTopping(values) {
   const dt = await db.all('SELECT datetime(\'now\')');
   console.log(dt);
 
-  const flavor = Array(values[0].length).fill('?').join(' OR ');
-  const texture = Array(values[1].length).fill('?').join(' OR ');
+  const flavor = Array(values[0].length).fill('?').join(',');
+  const texture = Array(values[1].length).fill('?').join(',');
 
   const flat = values.flat();
 
   const query = `SELECT * FROM topping 
-                  WHERE flavor IN (${flavor}) AND texture IN (${texture})`;
+                  WHERE (flavor IN (${flavor})) AND (texture IN (${texture}))`;
   const rows = await db.all(query, flat);
 
   return rows;
