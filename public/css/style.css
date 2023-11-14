@@ -85,3 +85,13 @@ button:focus
     right: 25%;
     left: 25%;
 }
+.jumbotron {
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    left: 10%;
+}
+img {
+    width: 300px;
+    height: 300px;
+}
