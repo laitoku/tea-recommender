@@ -1,0 +1,59 @@
+p
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.left
+{
+    width: 50%;
+    height: 100vh;
+    display: inline-block;
+}
+
+.right
+{
+    background-color: antiquewhite;
+}
+
+.pic-preview
+{
+    width: 100vh;
+    height: 100vh;
+}
+
+.tea-modify
+{
+    margin-left: 450px;
+    font-size: 150px;
+}
+
+.tea-modify1
+{
+    margin-left: 100px;
+    font-size: 150px;
+}
+
+.button-modify
+{
+    margin-top: 400px;
+    margin-left: 300px;
+    background-color: rgb(69, 69, 217);
+    height: 250px;
+    width: 500px;
+    cursor: pointer;
+    font-size: 50px;
+    border-radius: 125px;
+    border: none;
+}
+
+.button-modify:hover
+{
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.button-modify:active
+{
+    background-color: lightblue;
+}
