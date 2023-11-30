@@ -1,20 +1,19 @@
 const model = require('../models/tea_model');
 
-const getAllTea = (req, res) => {
-  model.selectTea().then((result) => {
-    const tea = JSON.stringify(result, null, 4);
-    // res.end(tea);
-    console.log(tea);
-    res.render('index3', { rows: result });
-  });
-};
-
 const getTea = (req, res) => {
   if (req) {
     bd = req.body
+    if (!bd.flavors || !bd.caffeine_preference || !bd.feelings || !bd.benefits || !bd.milk_preference) {
+      res.render('error');
+      return;
+    }
     const caffeine = parseInt(bd.caffeine_preference, 10);
     const milk = parseInt(bd.milk_preference, 10);
     if (milk != 0) {
+      if (!bd.toppings_preference) {
+        res.render('error');
+        return;
+      }
       var topping = parseInt(bd.toppings_preference, 10);
     }
     else {
@@ -24,7 +23,7 @@ const getTea = (req, res) => {
     const params = [bd.flavors, caffeine, bd.feelings, bd.benefits, milk];
 
 
-    model.selectTeaTest(params).then((result) => {
+    model.selectTea(params).then((result) => {
       const combinedResult = {};
 
       // Iterate over the rows and populate the combined result
@@ -57,6 +56,10 @@ const getTea = (req, res) => {
       });
 
       if (topping != 0) {
+        if (!bd.textures) {
+          res.render('error');
+          return;
+        }
         let paramT = [bd.flavors, bd.textures]
         model.selectTopping(paramT).then((tops) => {
           tops.forEach((toppingRow) => {
@@ -86,4 +89,4 @@ const getTea = (req, res) => {
   // });
 };
 
-module.exports = { getAllTea, getTea };
+module.exports = { getTea };
