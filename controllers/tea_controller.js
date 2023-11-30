@@ -69,12 +69,23 @@ const getTea = (req, res) => {
             }
           })
 
-          res.render('index4', { rows: result, toppings: tops });
+          if (result.length > 0) {
+            res.render('index4', { rows: result, toppings: tops });
+          }
+          else {
+            res.render('norec')
+          }
+          
           // res.end(JSON.stringify(combinedResult, null, 4));
         })
       }
       else {
-        res.render('index3', { rows: result });
+        if (result.length > 0) {
+          res.render('index3', { rows: result });
+        }
+        else {
+          res.render('norec');
+        }
         // res.end(JSON.stringify(combinedResult, null, 4));
       }
 
