@@ -6,26 +6,20 @@
 <body class="container">
 <main>
   <div class="jumbotron">
-    <h1>This is great</h1>
-    <p>Welcome to templating using EJS</p>
 
-    <ul>
         <% rows.forEach(function(row) { %>
           <div class="tea-block">
             <img src="/images/<%= row.tea_name %>.jpg"><br>
             <strong><%= row.tea_name %> <%= row.tea_type %> Tea</strong>
-             <br>- Description: <%= row.description %>
+             <br>Description: <%= row.description %>
           </div>
         <% }); %>
-      </ul>
-      <ul>
         <% toppings.forEach(function(row) { %>
           <div class="tea-block">
             <img src="/images/<%= row.topping_name %>.jpg"><br>
             <strong><%= row.topping_name %> </strong>
           </div>
         <% }); %>
-      </ul>
   </div>
 </main>
 

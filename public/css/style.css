@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 *
 {
     box-sizing: border-box;
@@ -5,17 +6,40 @@
 
 body
 {
-    background-color: #b8c6db ;
-    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7f7 100%);
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/teaf.jpg");
+    background-attachment: fixed;
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     overflow: none;
-    margin: 0;
+    margin: 1%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
 }
-
+body::-webkit-scrollbar
+{
+    display: none;
+}
+[type=checkbox] {
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+  }
+form
+{
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    padding-top: 10px;
+}
+fieldset
+{
+  background-color: white;
+  border-radius: 15px;
+  padding:10px;	
+  margin: 10px;
+}
 .quiz-container
 {
     background-color: #fff;
@@ -94,4 +118,14 @@ button:focus
 img {
     width: 300px;
     height: 300px;
+}
+input[type=submit]
+{
+    background-color: greenyellow;
+    border-radius: 25px;
+    border: 0;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: large;
 }
