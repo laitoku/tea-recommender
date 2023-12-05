@@ -122,3 +122,10 @@ input[type=submit]:active
 {
     background-color: rgb(57, 91, 6);
 }
+
+.selection
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
