@@ -9,9 +9,11 @@
 
         <% rows.forEach(function(row) { %>
           <div class="tea-block">
-            <img src="/images/<%= row.tea_name %>.jpg"><br>
-            <strong><%= row.tea_name %> <%= row.tea_type %> Tea</strong>
-             <br>Description: <%= row.description %>
+            <img src="/images/<%= row.tea_name %>.jpg">
+            <div class="text">
+              <strong><%= row.tea_name %> <%= row.tea_type %> Tea</strong>
+              <br>Description: <%= row.description %>
+            </div>
           </div>
         <% }); %>
   </div>

@@ -9,6 +9,7 @@ body
     background-image: url("../images/teaf.jpg");
     background-attachment: fixed;
     font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    font-size: 1vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,23 +102,33 @@ button:focus
 }
 .tea-block {
     border: 1px solid #ccc; /* Add a border to separate blocks */
-    padding: 10px; /* Add padding for spacing */
+    border-radius: 30px;
+    padding: 20px; /* Add padding for spacing */
+    margin: auto;
     margin-bottom: 10px; /* Add margin to space blocks apart */
     background-color: #f9f9f9; /* Set a background color for each block */
-    max-width: 50%;
+    /* max-width: 75%; */
+    width: 75%;
     position: relative;
-    right: 25%;
-    left: 25%;
+    /* right: 25%;
+    left: 25%; */
+    /* display: flex; */
+    /* align-items: normal; */
 }
-.jumbotron {
+.text {
+    margin-top: 7px;
+    padding-left: 10px;
+}
+/* .jumbotron {
     position: absolute;
     top: 25%;
     right: 10%;
     left: 10%;
-}
+} */
 img {
     width: 300px;
     height: 300px;
+    border-radius: 25px;
 }
 input[type=submit]
 {
