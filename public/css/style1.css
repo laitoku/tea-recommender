@@ -36,12 +36,11 @@
     align-items: center;
     flex-direction: column;
     font-size: 100px;
+    margin-bottom: 200px;
 }
 
 .button-modify
 {
-    margin-top: 200px;
-    margin-left: 150px;
     background-color: rgb(69, 69, 217);
     height: 250px;
     width: 500px;
@@ -50,6 +49,8 @@
     border-radius: 125px;
     border: none;
     position: center;
+    margin: auto;
+    display: block;
 }
 
 .button-modify:hover
