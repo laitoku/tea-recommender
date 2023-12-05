@@ -128,4 +128,19 @@ input[type=submit]
     padding-left: 15px;
     padding-right: 15px;
     font-size: large;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type=submit]:hover
+{
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+input[type=submit]:active
+{
+    background-color: rgb(57, 91, 6);
 }
