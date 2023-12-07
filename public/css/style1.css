@@ -41,16 +41,17 @@
 
 .button-modify
 {
-    background-color: rgb(69, 69, 217);
+    background-color: rgb(86, 30, 30);
     height: 250px;
     width: 500px;
     cursor: pointer;
     font-size: 50px;
     border-radius: 125px;
     border: none;
-    position: center;
     margin: auto;
     display: block;
+    color: rgb(193, 175, 175);
+    text-decoration: none;
 }
 
 .button-modify:hover
