@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head'); %>
+</head>
+
+<body class="container">
+  <main>
+    <div class="jumbotron">
+
+      <% rows.forEach(function(row) { %>
+        <div class="tea-block">
+          <img src="/images/<%= row.tea_name %>.jpg">
+          <div class="text">
+            <strong>
+              <%= row.tea_name %>
+                <%= row.tea_type %> Tea
+            </strong>
+            <br>Description: <%= row.description %>
+          </div>
+        </div>
+        <% }); %>
+          <% toppings.forEach(function(row) { %>
+            <div class="tea-block">
+              <img src="/images/<%= row.topping_name %>.jpg">
+              <div class="text">
+                <strong>
+                  <%= row.topping_name %>
+                </strong>
+              </div>
+            </div>
+            <% }); %>
+    </div>
+  </main>
+
+</body>
+
+</html>

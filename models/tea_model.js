@@ -11,6 +11,7 @@ async function selectTea(values = '') {
     return rows;
   }
 
+  //Construct query parameters
   const flavor = Array(values[0].length).fill('?').join(',');
   const feeling = Array(values[2].length).fill('?').join(',');
   const benefit = Array(values[3].length).fill('?').join(',');
@@ -21,6 +22,7 @@ async function selectTea(values = '') {
                   INNER JOIN flavor ON tea_id = tea_idf 
                   INNER JOIN health_benefit ON tea_id = tea_idh 
                   WHERE (flavor IN (${flavor})) AND caffeine = ? AND (feeling IN (${feeling})) AND (benefit IN (${benefit})) AND milk = ?`;
+
   const rows = await db.all(query, flat);
 
   return rows;
@@ -32,6 +34,7 @@ async function selectTopping(values) {
   const dt = await db.all('SELECT datetime(\'now\')');
   console.log(dt);
 
+  //Construct query parameters
   const flavor = Array(values[0].length).fill('?').join(',');
   const texture = Array(values[1].length).fill('?').join(',');
 
@@ -39,6 +42,7 @@ async function selectTopping(values) {
 
   const query = `SELECT * FROM topping 
                   WHERE (flavor IN (${flavor})) AND (texture IN (${texture}))`;
+
   const rows = await db.all(query, flat);
 
   return rows;

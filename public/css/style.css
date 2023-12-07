@@ -32,6 +32,7 @@ form
     border-radius: 25px;
     padding: 20px;
     padding-top: 10px;
+    filter: drop-shadow(5px 5px 5px rgb(90, 90, 90));
 }
 fieldset
 {
@@ -80,13 +81,15 @@ ul li label
 
 .tea-block {
     border: 1px solid #ccc; /* Add a border to separate blocks */
-    padding: 10px; /* Add padding for spacing */
+    border-radius: 30px;
+    padding: 15px; /* Add padding for spacing */
     margin-bottom: 10px; /* Add margin to space blocks apart */
     background-color: #f9f9f9; /* Set a background color for each block */
     max-width: 50%;
     position: relative;
     right: 25%;
     left: 25%;
+    filter: drop-shadow(5px 5px 5px rgb(90, 90, 90));
 }
 .jumbotron {
     position: absolute;
@@ -97,6 +100,8 @@ ul li label
 img {
     width: 300px;
     height: 300px;
+    border-radius: 26px;
+    margin-bottom: 10px;
 }
 input[type=submit]
 {
